@@ -4,22 +4,13 @@
         <description><![CDATA[Fire Flow Calculations Software]]></description>
         <about><![CDATA[FireFlow is a Freeware, EPANET based tool, which will calculate the available flow at network junctions while a minimal pressure is kept at demand junctions. FireFlow can run in a “Steady State” mode or perform an “Extended Period Simulation” (EPS). Using the EPS mode you can find how long can a specified flow be delivered? Or, what is the maximal flow that can be delivered for a specified period?]]></about>
         <version>0.1</version>
-        <epanetui_minimum_version>MTP4r2</epanetui_minimum_version>
-        <epanetui_maximum_version>MTP4r2</epanetui_maximum_version>
         <homepage><![CDATA[http://www.optiwater.com/fireflow/]]></homepage>
-        <file_name>FireFlow.0.1.zip</file_name>
+        <file_name>FireFlow.zip</file_name>
         <author_name><![CDATA[Elad Salomons]]></author_name>
         <download_url>https://github.com/KIOS-Research/EPANET-Plugins/blob/dev/FireFlow.zip</download_url>
         <uploaded_by><![CDATA[eladsad]]></uploaded_by>
-        <create_date>2019-03-25T09:22:25.391979</create_date>
-        <update_date>2019-03-25T09:22:25.391979</update_date>
-        <experimental>False</experimental>
-        <deprecated>False</deprecated>
         <tracker><![CDATA[https://github.com/eladsal/EPANET-Plugins/issues/]]></tracker>
         <repository><![CDATA[https://github.com/eladsal/EPANET-Plugins/]]></repository>
         <tags><![CDATA[fireflow, pressure]]></tags>
-        <downloads>0</downloads>
-        <average_vote>5</average_vote>
-        <rating_votes>1</rating_votes>
 </epanetui_plugin>
 </plugins>
