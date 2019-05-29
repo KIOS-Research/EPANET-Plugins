@@ -13,4 +13,17 @@
         <repository><![CDATA[https://github.com/eladsal/EPANET-Plugins/]]></repository>
         <tags><![CDATA[fireflow, pressure]]></tags>
 </epanetui_plugin>
+<epanetui_plugin name="Copycanvas" version="0.1" plugin_id="2">
+        <description><![CDATA[This tool can be used to copy the map canvas and place it in the clipboard.]]></description>
+        <about><![CDATA[This tool can be used to copy the map canvas and place it in the clipboard.]]></about>
+        <version>0.1</version>
+        <homepage><![CDATA[https://mariosmsk.com/2019/02/13/qcopycanvas-qgis/]]></homepage>
+        <file_name>Copycanvas.zip</file_name>
+        <author_name><![CDATA[Marios S. Kyriakou]]></author_name>
+        <download_url>https://github.com/KIOS-Research/EPANET-Plugins/blob/dev/Copycanvas.zip</download_url>
+        <uploaded_by><![CDATA[mariosmsk]]></uploaded_by>
+        <tracker><![CDATA[https://github.com/KIOS-Research/EPANET-Plugins/issues/]]></tracker>
+        <repository><![CDATA[https://github.com/eladsal/EPANET-Plugins/]]></repository>
+        <tags><![CDATA[copy, canvas]]></tags>
+</epanetui_plugin>
 </plugins>
