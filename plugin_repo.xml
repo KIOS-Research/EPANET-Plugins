@@ -13,7 +13,33 @@
         <repository><![CDATA[https://github.com/eladsal/EPANET-Plugins/]]></repository>
         <tags><![CDATA[fireflow, pressure]]></tags>
 </epanetui_plugin>
-<epanetui_plugin name="Copycanvas" version="0.1" plugin_id="2">
+<epanetui_plugin name="Count" version="0.1" plugin_id="2">
+        <description><![CDATA[Count objects of network]]></description>
+        <about><![CDATA[Count pipes, junctions, etc. of network]]></about>
+        <version>0.1</version>
+        <homepage><![CDATA[http://www.optiwater.com/]]></homepage>
+        <file_name>Count.zip</file_name>
+        <author_name><![CDATA[Elad Salomons]]></author_name>
+        <download_url>https://github.com/KIOS-Research/EPANET-Plugins/blob/dev/Count.zip</download_url>
+        <uploaded_by><![CDATA[eladsad]]></uploaded_by>
+        <tracker><![CDATA[https://github.com/eladsal/EPANET-Plugins/issues/]]></tracker>
+        <repository><![CDATA[https://github.com/eladsal/EPANET-Plugins/]]></repository>
+        <tags><![CDATA[fireflow, pressure]]></tags>
+</epanetui_plugin>
+<epanetui_plugin name="Elevations" version="0.1" plugin_id="3">
+        <description><![CDATA[Script to extract elevation data from Google Maps using Google APIs]]></description>
+        <about><![CDATA[Script to extract elevation data from Google Maps using Google APIs]]></about>
+        <version>0.1</version>
+        <homepage><![CDATA[http://plugins.epanet.net/2017/12/22/import-elevations/]]></homepage>
+        <file_name>Elevations.zip</file_name>
+        <author_name><![CDATA[Elad Salomons]]></author_name>
+        <download_url>https://github.com/KIOS-Research/EPANET-Plugins/blob/dev/Elevations.zip</download_url>
+        <uploaded_by><![CDATA[eladsad]]></uploaded_by>
+        <tracker><![CDATA[https://github.com/eladsal/EPANET-Plugins/issues/]]></tracker>
+        <repository><![CDATA[https://github.com/eladsal/EPANET-Plugins/]]></repository>
+        <tags><![CDATA[fireflow, pressure]]></tags>
+</epanetui_plugin>
+<epanetui_plugin name="Copycanvas" version="0.1" plugin_id="4">
         <description><![CDATA[This tool can be used to copy the map canvas and place it in the clipboard.]]></description>
         <about><![CDATA[This tool can be used to copy the map canvas and place it in the clipboard.]]></about>
         <version>0.1</version>
@@ -26,7 +52,7 @@
         <repository><![CDATA[https://github.com/eladsal/EPANET-Plugins/]]></repository>
         <tags><![CDATA[copy, canvas]]></tags>
 </epanetui_plugin>
-<epanetui_plugin name="Basemaps" version="0.1" plugin_id="3">
+<epanetui_plugin name="Basemaps" version="0.1" plugin_id="5">
         <description><![CDATA[This tool can be used to add basemaps on epanet.]]></description>
         <about><![CDATA[This tool can be used to add basemaps on epanet like google satellite, openstreetmap etc.]]></about>
         <version>0.1</version>
