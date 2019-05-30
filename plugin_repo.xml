@@ -26,4 +26,17 @@
         <repository><![CDATA[https://github.com/eladsal/EPANET-Plugins/]]></repository>
         <tags><![CDATA[copy, canvas]]></tags>
 </epanetui_plugin>
+<epanetui_plugin name="Basemaps" version="0.1" plugin_id="3">
+        <description><![CDATA[This tool can be used to add basemaps on epanet.]]></description>
+        <about><![CDATA[This tool can be used to add basemaps on epanet like google satellite, openstreetmap etc.]]></about>
+        <version>0.1</version>
+        <homepage><![CDATA[https://mariosmsk.com]]></homepage>
+        <file_name>Copycanvas.zip</file_name>
+        <author_name><![CDATA[Marios S. Kyriakou]]></author_name>
+        <download_url>https://github.com/KIOS-Research/EPANET-Plugins/blob/dev/Basemaps.zip</download_url>
+        <uploaded_by><![CDATA[mariosmsk]]></uploaded_by>
+        <tracker><![CDATA[https://github.com/KIOS-Research/EPANET-Plugins/issues/]]></tracker>
+        <repository><![CDATA[https://github.com/eladsal/EPANET-Plugins/]]></repository>
+        <tags><![CDATA[satellite, openstreetmap]]></tags>
+</epanetui_plugin>
 </plugins>
