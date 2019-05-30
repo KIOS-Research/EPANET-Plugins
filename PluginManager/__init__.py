@@ -24,7 +24,7 @@ import shutil
 
 plugin_name = "PluginManager"
 plugin_create_menu = True
-__all__ = {"PluginManager":1}
+__all__ = {"Manage and Install Plugins...":1}
 
 
 class pluginManagerUI(QtGui.QDialog, Ui_PluginManager):
@@ -63,9 +63,9 @@ def run(session=None, choice=None):
     if choice is None:
         choice = 99
     if choice == 1:
-        #QMessageBox.information(None, plugin_name,'TEST', QMessageBox.Ok)
         global self, plugins, download_url
         self = pluginManagerUI()
+        self.setWindowTitle('Manage and Install Plugins...')
 
         for plugin in plugins:
             item = QtGui.QListWidgetItem()
@@ -78,6 +78,7 @@ def run(session=None, choice=None):
         self.install_re.clicked.connect(btn_installed)
         self.uninstall.clicked.connect(btn_uninstalled)
         self.show()
+
         b # error to show ui
 
 def save_session(session):
@@ -103,7 +104,7 @@ def btn_installed():
     zip_ref.close()
     os.remove(zipFilePath)
 
-    curr.setCheckState(QtCore.Qt.Checked)
+    self.listWidget.item(current_index).setCheckState(QtCore.Qt.Checked)
 
     refresh_menuPlugin(iface)
 
@@ -118,17 +119,22 @@ def refresh_menuPlugin(session):
 
 def btn_uninstalled():
     global self, plugins, download_url, iface
-    f = open(os.getcwd() + '\\plugins\\PluginManager\\xmlfile2.txt', 'w')
-    f.write(str(iface.plugins))
-    f.close()
 
-    iface.plugins = []
     curr = self.listWidget.currentIndex()
     current_index = curr.row()
     plugin_name = plugins[current_index]
-    plugin_path = os.getcwd()+'\\plugins\\' + plugin_name
-    # Remove plugin from path
-    shutil.rmtree(plugin_path)
 
-    curr.setCheckable(False)
-    refresh_menuPlugin(session)
+    reply = QMessageBox.question(None, 'EPANET Python Plugin Installer',
+                                 'Are you sure you want to uninstall the following plugin?\n'+'('+plugin_name+')',
+                                 QMessageBox.Yes | QMessageBox.No)
+
+
+    if reply == QMessageBox.Yes:
+
+        plugin_path = os.getcwd()+'\\plugins\\' + plugin_name
+        # Clear all plugins
+        iface.menuPlugins.clear()
+
+        # Remove plugin from path
+        shutil.rmtree(plugin_path)
+        QMessageBox.information(None, plugin_name,'Plugin uninstalled successfully.', QMessageBox.Ok)
