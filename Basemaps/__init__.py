@@ -33,24 +33,13 @@ def run(session=None, choice=None):
         if not status:
             return
 
-        urlWithParams = path + mapname
-        session.map_widget.addRasterLayer(urlWithParams)
-        path_only, file_only = os.path.split(filename)
-        if path_only != directory:
-            session.program_settings.setValue("GISDataDir", path_only)
-            session.program_settings.sync()
-        session.map_widget.refresh_extent_needed = False
-
     elif choice == 2:
         mapname = "Openstreetmap.xml"
         status = checkBasemaps(session, mapname)
         if not status:
             return
 
+    if choice ==1 or choice == 2:
         urlWithParams = path + mapname
         session.map_widget.addRasterLayer(urlWithParams)
-        path_only, file_only = os.path.split(filename)
-        if path_only != directory:
-            session.program_settings.setValue("GISDataDir", path_only)
-            session.program_settings.sync()
         session.map_widget.refresh_extent_needed = False
