@@ -13,11 +13,13 @@ except:
     from PyQt5 import QtCore, QtGui, QtWidgets
     from PyQt5.QtWidgets import QMessageBox
 
-from plugins.PluginManager.plugin_manager import Ui_PluginManager
-
 import urllib2
 import os
 import zipfile
+import inspect, sys
+plugin_dir = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
+sys.path.append(plugin_dir)
+from plugin_manager import Ui_PluginManager
 
 #for remove folder plugin
 import shutil
