@@ -1,0 +1,31 @@
+# This file contains metadata for your plugin. Since 
+# version 2.0 of epanetui this is the proper way to supply 
+# information about a plugin. The old method of 
+# embedding metadata in __init__.py will 
+# is no longer supported since version 2.0.
+
+# This file should be included when you package your plugin.# Mandatory items:
+
+[general]
+name=Copycanvas
+epanetuiMinimumVersion=MTP4r2
+description=This tool can be used to copy the map canvas and place it in the clipboard.
+version=0.1
+author=Marios S. Kyriakou, KIOS Research and Innovation Center of Excellence (KIOS CoE)
+email=mariosmsk@gmail.com
+
+about=This tool can be used to copy the map canvas and place it in the clipboard.
+
+tracker=https://github.com/KIOS-Research/EPANET-Plugins/issues/
+repository=https://github.com/KIOS-Research/EPANET-Plugins/tree/new_plugins/Copycanvas
+# End of mandatory metadata
+
+# Recommended items:
+
+# Uncomment the following line and add your changelog:
+# changelog=
+
+# Tags are comma separated with spaces allowed
+tags=copy, canvas
+
+homepage=https://github.com/KIOS-Research/EPANET-Plugins/
