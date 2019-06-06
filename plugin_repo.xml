@@ -2,7 +2,7 @@
 <plugins>
 <epanetui_plugin name="FireFlow" version="0.1" plugin_id="1">
         <description><![CDATA[Fire Flow Calculations Software]]></description>
-        <about><![CDATA[FireFlow is a Freeware, EPANET based tool, which will calculate the available flow at network junctions while a minimal pressure is kept at demand junctions. FireFlow can run in a “Steady State” mode or perform an “Extended Period Simulation” (EPS). Using the EPS mode you can find how long can a specified flow be delivered? Or, what is the maximal flow that can be delivered for a specified period?]]></about>
+        <about><![CDATA[FireFlow is a Freeware, EPANET based tool, which will calculate the available flow at network junctions while a minimal pressure is kept at demand junctions. FireFlow can run in a <b>Steady State</b> mode or perform an <b>Extended Period Simulation</b> (EPS). Using the EPS mode you can find how long can a specified flow be delivered? Or, what is the maximal flow that can be delivered for a specified period?]]></about>
         <version>0.1</version>
         <homepage><![CDATA[http://www.optiwater.com/fireflow/]]></homepage>
         <file_name>FireFlow.zip</file_name>
