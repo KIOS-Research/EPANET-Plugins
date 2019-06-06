@@ -10,6 +10,18 @@
     <height>528</height>
    </rect>
   </property>
+  <property name="minimumSize">
+   <size>
+    <width>645</width>
+    <height>528</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>645</width>
+    <height>528</height>
+   </size>
+  </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
@@ -48,8 +60,14 @@
      <height>431</height>
     </rect>
    </property>
+   <property name="editTriggers">
+    <set>QAbstractItemView::SelectedClicked</set>
+   </property>
+   <property name="selectionMode">
+    <enum>QAbstractItemView::SingleSelection</enum>
+   </property>
   </widget>
-  <widget class="QWebView" name="webView">
+  <widget class="QTextEdit" name="textEdit">
    <property name="geometry">
     <rect>
      <x>250</x>
@@ -58,20 +76,38 @@
      <height>431</height>
     </rect>
    </property>
-   <property name="url">
-    <url>
-     <string>https://raw.githubusercontent.com/KIOS-Research/EPANET-Plugins/dev/plugin_repo.xml</string>
-    </url>
+   <property name="html">
+    <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Courier New'; font-size:8pt; font-weight:600; color:#000000; background-color:#ffffff;&quot;&gt;Plugin Name:&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New'; font-size:8pt; color:#000000; background-color:#ffffff;&quot;&gt; FireFlow&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Courier New'; font-size:8pt; font-weight:600; color:#000000; background-color:#ffffff;&quot;&gt;Version    :&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New'; font-size:8pt; color:#000000; background-color:#ffffff;&quot;&gt; 0.1&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Courier New'; font-size:8pt; color:#000000;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Courier New'; font-size:8pt; font-weight:600; color:#000000; background-color:#ffffff;&quot;&gt;Description:&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New'; font-size:8pt; color:#000000; background-color:#ffffff;&quot;&gt; Fire Flow Calculations Software&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Courier New'; font-size:8pt; color:#000000;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Courier New'; font-size:8pt; font-weight:600; color:#000000; background-color:#ffffff;&quot;&gt;About      :&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New'; font-size:8pt; color:#000000; background-color:#ffffff;&quot;&gt; FireFlow is a Freeware, EPANET based tool, which will calculate the available flow at network junctions while a minimal pressure is kept at demand junctions. FireFlow can run in a “Steady State” mode or perform an “Extended Period Simulation” (EPS). Using the EPS mode you can find how long can a specified flow be delivered? Or, what is the maximal flow that can be delivered for a specified period?&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Courier New'; font-size:8pt; color:#000000;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Courier New'; font-size:8pt; font-weight:600; color:#000000; background-color:#ffffff;&quot;&gt;Homepage   :&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New'; font-size:8pt; color:#000000; background-color:#ffffff;&quot;&gt; &lt;/span&gt;&lt;span style=&quot; font-size:8pt; color:#0000ff;&quot;&gt;http://www.optiwater.com/fireflow/&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt; text-decoration: underline; color:#0000ff;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Courier New'; font-size:8pt; font-weight:600; color:#000000; background-color:#ffffff;&quot;&gt;Author     :&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New'; font-size:8pt; color:#000000; background-color:#ffffff;&quot;&gt; Elad Salomons&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Courier New'; font-size:8pt; color:#000000;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Courier New'; font-size:8pt; font-weight:600; color:#000000; background-color:#ffffff;&quot;&gt;Download   : &lt;/span&gt;&lt;span style=&quot; font-size:8pt; color:#0000ff;&quot;&gt;https://github.com/KIOS-Research/EPANET-Plugins/blob/dev/FireFlow.zip&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt; text-decoration: underline; color:#0000ff;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Courier New'; font-size:8pt; font-weight:600; color:#000000; background-color:#ffffff;&quot;&gt;Uploaded by: &lt;/span&gt;&lt;span style=&quot; font-family:'Courier New'; font-size:8pt; color:#000000; background-color:#ffffff;&quot;&gt;eladsad&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Courier New'; font-size:8pt; color:#000000;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Courier New'; font-size:8pt; font-weight:600; color:#000000; background-color:#ffffff;&quot;&gt;Tracker    : &lt;/span&gt;&lt;span style=&quot; font-size:8pt; color:#0000ff;&quot;&gt;https://github.com/eladsal/EPANET-Plugins/issues/&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt; text-decoration: underline; color:#0000ff;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Courier New'; font-size:8pt; font-weight:600; color:#000000; background-color:#ffffff;&quot;&gt;Repository : &lt;/span&gt;&lt;span style=&quot; font-size:8pt; color:#0000ff;&quot;&gt;https://github.com/eladsal/EPANET-Plugins/&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt; text-decoration: underline; color:#0000ff;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Courier New'; font-size:8pt; font-weight:600; color:#000000; background-color:#ffffff;&quot;&gt;Tags       : &lt;/span&gt;&lt;span style=&quot; font-family:'Courier New'; font-size:8pt; color:#000000; background-color:#ffffff;&quot;&gt;fireflow, pressure&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Courier New'; font-size:8pt; font-weight:600; color:#000000;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+   <property name="textInteractionFlags">
+    <set>Qt::LinksAccessibleByKeyboard|Qt::LinksAccessibleByMouse|Qt::TextBrowserInteraction|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
    </property>
   </widget>
  </widget>
- <customwidgets>
-  <customwidget>
-   <class>QWebView</class>
-   <extends>QWidget</extends>
-   <header>QtWebKit/QWebView</header>
-  </customwidget>
- </customwidgets>
  <resources/>
  <connections/>
 </ui>
