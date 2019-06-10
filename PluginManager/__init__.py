@@ -223,4 +223,7 @@ def btn_uninstalled():
         session_new.populate_plugins_menu()
         save_session(session_new)
 
+        #Uncheck plugin
+        self.listWidget.item(current_index).setCheckState(QtCore.Qt.Unchecked)
+
         QMessageBox.information(None, plugin_name,'Plugin uninstalled successfully.', QMessageBox.Ok)
