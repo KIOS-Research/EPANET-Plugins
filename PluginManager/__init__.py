@@ -154,11 +154,11 @@ def update_metadata():
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:\'Courier New\'; font-size:8pt; font-weight:600; color:#000000;\"><br /></p></body></html>")
 
 def save_session(session):
-    global iface
-    iface = session
+    global session_new
+    session_new = session
 
 def btn_installed():
-    global self, xml_values, iface
+    global self, xml_values, session_new
 
     curr = self.listWidget.currentIndex()
     current_index = curr.row()
@@ -180,7 +180,8 @@ def btn_installed():
 
     self.listWidget.item(current_index).setCheckState(QtCore.Qt.Checked)
 
-    refresh_menuPlugin(iface)
+    refresh_menuPlugin(session_new)
+    save_session(session_new)
 
     QMessageBox.information(None, plugin_name_sel, 'Plugin installed successfully.', QMessageBox.Ok)
 
@@ -194,7 +195,7 @@ def refresh_menuPlugin(session):
     session.populate_plugins_menu()
 
 def btn_uninstalled():
-    global self, xml_values, iface
+    global self, xml_values, session_new
 
     curr = self.listWidget.currentIndex()
     current_index = curr.row()
@@ -208,17 +209,18 @@ def btn_uninstalled():
     if reply == QMessageBox.Yes:
 
         # Clear all plugins
-        iface.menuPlugins.clear()
-        #iface.plugins = iface.get_plugins()
+        session_new.menuPlugins.clear()
+        #session_new.plugins = session_new.get_plugins()
 
-        for plugin in iface.plugins:
+        for plugin in session_new.plugins:
             if plugin_name in plugin['name']:
-                iface.plugins.remove(plugin)
-                break
+                session_new.plugins.remove(plugin)
+                #break
 
         # session.plugins = session.get_plugins()
         shutil.rmtree(os.getcwd() + '\\plugins\\' + plugin_name)
 
-        iface.populate_plugins_menu()
+        session_new.populate_plugins_menu()
+        save_session(session_new)
 
         QMessageBox.information(None, plugin_name,'Plugin uninstalled successfully.', QMessageBox.Ok)
