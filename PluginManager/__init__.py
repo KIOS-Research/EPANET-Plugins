@@ -188,8 +188,9 @@ def refresh_menuPlugin(session):
 
     # Clear all plugins
     session.menuPlugins.clear()
-    # Restore all plugins
+
     session.plugins = session.get_plugins()
+
     session.populate_plugins_menu()
 
 def btn_uninstalled():
@@ -206,10 +207,18 @@ def btn_uninstalled():
 
     if reply == QMessageBox.Yes:
 
-        plugin_path = os.getcwd()+'\\plugins\\' + plugin_name
         # Clear all plugins
         iface.menuPlugins.clear()
+        #iface.plugins = iface.get_plugins()
 
-        # Remove plugin from path
-        shutil.rmtree(plugin_path)
+        for plugin in iface.plugins:
+            if plugin_name in plugin['name']:
+                iface.plugins.remove(plugin)
+                break
+
+        # session.plugins = session.get_plugins()
+        shutil.rmtree(os.getcwd() + '\\plugins\\' + plugin_name)
+
+        iface.populate_plugins_menu()
+
         QMessageBox.information(None, plugin_name,'Plugin uninstalled successfully.', QMessageBox.Ok)
