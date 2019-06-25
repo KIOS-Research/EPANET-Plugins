@@ -8,16 +8,16 @@
 
 [general]
 name=PluginManager
-epanetuiMinimumVersion=MTP4r2
+epanetuiMinimumVersion=MTP5r1
 description=This plugin created..
-version=0.1
+version=0.2
 author=Marios S. Kyriakou, Demetrios G. Eliades, KIOS Research and Innovation Center of Excellence (KIOS CoE)
 email=mariosmsk@gmail.com, eldemet@gmail.com
 
 about=This plugin created.
 
 tracker=https://github.com/KIOS-Research/EPANET-Plugins/issues/
-repository=https://github.com/KIOS-Research/EPANET-Plugins/tree/new_plugins/PluginManager
+repository=https://github.com/KIOS-Research/EPANET-Plugins/tree/dev3
 # End of mandatory metadata
 
 # Recommended items:

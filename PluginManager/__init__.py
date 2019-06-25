@@ -5,25 +5,23 @@
 # Email: mariosmsk@gmail.com
 # License: MIT
 
-# This plugin works with EPANET MTP4r2:
-# https://github.com/USEPA/SWMM-EPANET_User_Interface/releases/tag/MTP4r2
+# This plugin works with EPANET MTP5r1:
+# https://github.com/USEPA/SWMM-EPANET_User_Interface/releases/tag/MTP5r1
 
-try:
-    from PyQt4 import QtCore, QtGui
-    from PyQt4.QtGui import QMessageBox
-except:
-    from PyQt5 import QtCore, QtGui, QtWidgets
-    from PyQt5.QtWidgets import QMessageBox
+from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtWidgets import QMessageBox
 
-import urllib2
+import urllib.request
 import os
 import zipfile
 import inspect, sys
+
+import xml.etree.ElementTree as ET
+
 plugin_dir = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
 sys.path.append(plugin_dir)
-from plugin_manager import Ui_PluginManager
 
-from xml.dom import minidom
+from plugin_manager import Ui_PluginManager
 
 #for remove folder plugin
 import shutil
@@ -33,10 +31,10 @@ plugin_create_menu = True
 __all__ = {"Manage and Install Plugins...":1}
 
 
-class pluginManagerUI(QtGui.QDialog, Ui_PluginManager):
+class pluginManagerUI(QtWidgets.QDialog, Ui_PluginManager):
 
     def __init__(self, parent=None):
-        QtGui.QWidget.__init__(self)
+        QtWidgets.QWidget.__init__(self)
         self.setupUi(self)
 
 def run(session=None, choice=None):
@@ -45,13 +43,13 @@ def run(session=None, choice=None):
 
     # Read xml file from github repo #Because not need pip install something
     # check code again for updates
-    file = urllib2.urlopen('https://raw.githubusercontent.com/KIOS-Research/EPANET-Plugins/dev/plugin_repo.xml')
+    file = urllib.request.urlopen("https://raw.githubusercontent.com/KIOS-Research/EPANET-Plugins/dev/plugin_repo.xml")
     data = file.read()
     file.close()
 
     # parse xml file #get all plugins
-    doc = minidom.parseString(data)
-    getPlugins = doc.documentElement.getElementsByTagName("epanetui_plugin")
+    root = ET.fromstring(data)
+    getPlugins = root.findall('epanetui_plugin')
 
     class InitStruct:
         download_url = []
@@ -66,33 +64,34 @@ def run(session=None, choice=None):
         repository = []
         tags = []
 
+    global self, xml_values
+
     xml_values = InitStruct()
 
-    for i, plugin in enumerate(getPlugins):
-        xml_values.download_url.append(plugin.getElementsByTagName("download_url")[0].firstChild.data)
-        xml_values.plugins.append(plugin.getElementsByTagName("file_name")[0].firstChild.data[0:-4])
-        xml_values.description.append(plugin.getElementsByTagName("description")[0].firstChild.data)
-        xml_values.about.append(plugin.getElementsByTagName("about")[0].firstChild.data)
-        xml_values.version.append(plugin.getElementsByTagName("version")[0].firstChild.data)
-        xml_values.homepage.append(plugin.getElementsByTagName("homepage")[0].firstChild.data)
-        xml_values.author_name.append(plugin.getElementsByTagName("author_name")[0].firstChild.data)
-        xml_values.uploaded_by.append(plugin.getElementsByTagName("uploaded_by")[0].firstChild.data)
-        xml_values.tracker.append(plugin.getElementsByTagName("tracker")[0].firstChild.data)
-        xml_values.repository.append(plugin.getElementsByTagName("repository")[0].firstChild.data)
-        xml_values.tags.append(plugin.getElementsByTagName("tags")[0].firstChild.data)
+    for i, _plugin_ in enumerate(getPlugins):
+        xml_values.download_url.append(_plugin_.find('download_url').text)
+        xml_values.plugins.append(_plugin_.find('file_name').text[:-4])
+        xml_values.description.append(_plugin_.find('description').text)
+        xml_values.about.append(_plugin_.find('about').text)
+        xml_values.version.append(_plugin_.find('version').text)
+        xml_values.homepage.append(_plugin_.find('homepage').text)
+        xml_values.author_name.append(_plugin_.find('author_name').text)
+        xml_values.uploaded_by.append(_plugin_.find('uploaded_by').text)
+        xml_values.tracker.append(_plugin_.find('tracker').text)
+        xml_values.repository.append(_plugin_.find('repository').text)
+        xml_values.tags.append(_plugin_.find('tags').text)
 
-    del getPlugins, doc, data
+    del getPlugins, root, data
 
     # Check if plugin
     if choice is None:
         choice = 99
     if choice == 1:
-        global self, xml_values
         self = pluginManagerUI()
         self.setWindowTitle('Manage and Install Plugins...')
 
         for plugin in xml_values.plugins:
-            item = QtGui.QListWidgetItem()
+            item = QtWidgets.QListWidgetItem()
             item.setText(plugin)
             item.setFlags(item.flags() | QtCore.Qt.ItemIsUserCheckable)
             item.setCheckState(QtCore.Qt.Unchecked)
@@ -106,9 +105,7 @@ def run(session=None, choice=None):
         self.listWidget.setCurrentRow(0)
         self.show()
 
-        self.update_metadata()
-
-        b # error to show ui
+        update_metadata()
 
 def update_metadata():
     global xml_values, self
@@ -167,7 +164,7 @@ def btn_installed():
     url = 'https://raw.githubusercontent.com/KIOS-Research/EPANET-Plugins/dev/'+plugin_name_sel+'.zip'
 
     # Download and unzip zip file of plugin, then remove zip
-    f = urllib2.urlopen(url)
+    f = urllib.request.urlopen(url)
     zipFilePath = os.getcwd()+'\\plugins\\' + os.path.basename(url)
     zipFile = open(zipFilePath, "wb")
     zipFile.write(f.read())
