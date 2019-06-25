@@ -161,7 +161,7 @@ def btn_installed():
     current_index = curr.row()
     #url = xml_values.download_url[current_index]
     plugin_name_sel = xml_values.plugins[current_index]
-    url = 'https://raw.githubusercontent.com/KIOS-Research/EPANET-Plugins/dev/'+plugin_name_sel+'.zip'
+    url = 'https://raw.githubusercontent.com/KIOS-Research/EPANET-Plugins/dev3/'+plugin_name_sel+'.zip'
 
     # Download and unzip zip file of plugin, then remove zip
     f = urllib.request.urlopen(url)

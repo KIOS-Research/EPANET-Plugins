@@ -7,7 +7,7 @@
         <homepage><![CDATA[http://www.optiwater.com/fireflow/]]></homepage>
         <file_name>FireFlow.zip</file_name>
         <author_name><![CDATA[Elad Salomons]]></author_name>
-        <download_url>https://github.com/KIOS-Research/EPANET-Plugins/blob/dev/FireFlow.zip</download_url>
+        <download_url>https://github.com/KIOS-Research/EPANET-Plugins/blob/dev3/FireFlow.zip</download_url>
         <uploaded_by><![CDATA[eladsad]]></uploaded_by>
         <tracker><![CDATA[https://github.com/eladsal/EPANET-Plugins/issues/]]></tracker>
         <repository><![CDATA[https://github.com/eladsal/EPANET-Plugins/]]></repository>
@@ -20,7 +20,7 @@
         <homepage><![CDATA[http://www.optiwater.com/]]></homepage>
         <file_name>Count.zip</file_name>
         <author_name><![CDATA[Elad Salomons]]></author_name>
-        <download_url>https://github.com/KIOS-Research/EPANET-Plugins/blob/dev/Count.zip</download_url>
+        <download_url>https://github.com/KIOS-Research/EPANET-Plugins/blob/dev3/Count.zip</download_url>
         <uploaded_by><![CDATA[eladsad]]></uploaded_by>
         <tracker><![CDATA[https://github.com/eladsal/EPANET-Plugins/issues/]]></tracker>
         <repository><![CDATA[https://github.com/eladsal/EPANET-Plugins/]]></repository>
@@ -33,7 +33,7 @@
         <homepage><![CDATA[http://plugins.epanet.net/2017/12/22/import-elevations/]]></homepage>
         <file_name>Elevations.zip</file_name>
         <author_name><![CDATA[Elad Salomons]]></author_name>
-        <download_url>https://github.com/KIOS-Research/EPANET-Plugins/blob/dev/Elevations.zip</download_url>
+        <download_url>https://github.com/KIOS-Research/EPANET-Plugins/blob/dev3/Elevations.zip</download_url>
         <uploaded_by><![CDATA[eladsad]]></uploaded_by>
         <tracker><![CDATA[https://github.com/eladsal/EPANET-Plugins/issues/]]></tracker>
         <repository><![CDATA[https://github.com/eladsal/EPANET-Plugins/]]></repository>
@@ -46,7 +46,7 @@
         <homepage><![CDATA[https://mariosmsk.com/2019/02/13/qcopycanvas-qgis/]]></homepage>
         <file_name>Copycanvas.zip</file_name>
         <author_name><![CDATA[Marios S. Kyriakou]]></author_name>
-        <download_url>https://github.com/KIOS-Research/EPANET-Plugins/blob/dev/Copycanvas.zip</download_url>
+        <download_url>https://github.com/KIOS-Research/EPANET-Plugins/blob/dev3/Copycanvas.zip</download_url>
         <uploaded_by><![CDATA[mariosmsk]]></uploaded_by>
         <tracker><![CDATA[https://github.com/KIOS-Research/EPANET-Plugins/issues/]]></tracker>
         <repository><![CDATA[https://github.com/eladsal/EPANET-Plugins/]]></repository>
@@ -59,7 +59,7 @@
         <homepage><![CDATA[https://mariosmsk.com]]></homepage>
         <file_name>Basemaps.zip</file_name>
         <author_name><![CDATA[Marios S. Kyriakou]]></author_name>
-        <download_url>https://github.com/KIOS-Research/EPANET-Plugins/blob/dev/Basemaps.zip</download_url>
+        <download_url>https://github.com/KIOS-Research/EPANET-Plugins/blob/dev3/Basemaps.zip</download_url>
         <uploaded_by><![CDATA[mariosmsk]]></uploaded_by>
         <tracker><![CDATA[https://github.com/KIOS-Research/EPANET-Plugins/issues/]]></tracker>
         <repository><![CDATA[https://github.com/eladsal/EPANET-Plugins/]]></repository>
