@@ -8,9 +8,9 @@
 
 [general]
 name=Copycanvas
-epanetuiMinimumVersion=MTP4r2
+epanetuiMinimumVersion=MTP5r1
 description=This tool can be used to copy the map canvas and place it in the clipboard.
-version=0.1
+version=0.2
 author=Marios S. Kyriakou, KIOS Research and Innovation Center of Excellence (KIOS CoE)
 email=mariosmsk@gmail.com
 

@@ -6,8 +6,8 @@
 # This plugin works with EPANET MTP5r0:
 # https://github.com/USEPA/SWMM-EPANET_User_Interface/releases/tag/MTP4r2
 
-from PyQt4.QtGui import QMessageBox
-from PyQt4 import QtCore, QtGui
+from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtWidgets import QMessageBox
 
 plugin_name = "Copycanvas"
 plugin_create_menu = True
@@ -36,7 +36,7 @@ def run(session=None, choice=None):
     if choice is None:
         choice = 99
     if choice == 1:
-        QtGui.QApplication.clipboard().setImage(QtGui.QImage(QtGui.QPixmap.grabWidget(session.canvas)))
+        QtWidgets.QApplication.clipboard().setImage(QtGui.QImage(QtWidgets.QWidget.grab(session.canvas)))
         showMessage(title=ltopTitle, msg='Copied map canvas successfully.', button='OK')
     elif choice == 2:
         showMessage(title=ltopTitle, msg='This plugin created by Marios S. Kyriakou, KIOS Research '
