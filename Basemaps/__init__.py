@@ -3,8 +3,8 @@
 # Email: mariosmsk@gmail.com
 # License: MIT
 
-# This plugin works with EPANET MTP4r2:
-# https://github.com/USEPA/SWMM-EPANET_User_Interface/releases/tag/MTP4r2
+# This plugin works with EPANET MTP5r1:
+# https://github.com/USEPA/SWMM-EPANET_User_Interface/releases/tag/MTP5r1
 import os
 
 plugin_name = "Basemaps"
@@ -16,8 +16,7 @@ def checkBasemaps(session, mapname):
     status = True
     for tlayer in session.map_widget.base_group.findLayers():
         if tlayer.layer().name() == mapname:
-            session.map_widget.remove_layers([tlayer.layer()])
-            session.map_widget.base_group.removeChildNode(tlayer)
+            session.map_widget.base_group.removeLayer(tlayer.layer())
             status = False
             break
     return status
