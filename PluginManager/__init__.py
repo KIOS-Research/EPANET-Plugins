@@ -43,7 +43,7 @@ def run(session=None, choice=None):
 
     # Read xml file from github repo #Because not need pip install something
     # check code again for updates
-    file = urllib.request.urlopen("https://raw.githubusercontent.com/KIOS-Research/EPANET-Plugins/dev/plugin_repo.xml")
+    file = urllib.request.urlopen("https://raw.githubusercontent.com/KIOS-Research/EPANET-Plugins/dev3/plugin_repo.xml")
     data = file.read()
     file.close()
 
